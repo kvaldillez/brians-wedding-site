@@ -2,8 +2,16 @@
 	background-color: #260026; /* Suggested by Brian: 1e001e */
 	height:100vh;
 }
+
 #bgContainer {
 	padding: 50px 60px;
 	min-height: 500px;
 	background: url('/assets/flower-background.png') left top repeat-x;
+}
+
+#contentContainer {
+	padding: 20px;
+	color: #555555;
+	background-color: #fff;
+	text-align: center;
 }
