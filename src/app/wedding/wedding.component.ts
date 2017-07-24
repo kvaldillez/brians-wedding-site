@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-wedding',
   templateUrl: './wedding.component.html',
-  styleUrls: ['./wedding.component.css']
+  styleUrls: ['../app.component.css','./wedding.component.css']
 })
 export class WeddingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }

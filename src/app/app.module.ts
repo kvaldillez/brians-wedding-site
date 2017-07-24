@@ -6,18 +6,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent }  from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { OurStoryComponent } from './our-story/our-story.component';
-import { PhotosComponent } from './photos/photos.component';
 import { WeddingComponent } from './wedding/wedding.component';
+import { PhotosComponent } from './photos/photos.component';
 import { GiftsComponent } from './gifts/gifts.component';
+import { RsvpComponent } from './rsvp/rsvp.component';
 import { ContactComponent } from './contact/contact.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'our-story', component: OurStoryComponent },
-  { path: 'photos', component: PhotosComponent },
   { path: 'wedding', component: WeddingComponent },
+  { path: 'photos', component: PhotosComponent },
   { path: 'gifts', component: GiftsComponent },
+  { path: 'rsvp', component: RsvpComponent },
   { path: 'contact', component: ContactComponent }
 ]
 
@@ -25,16 +25,16 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule, // <-- import the FormsModule before binding with [(ngModel)]
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes,{ useHash: true })
   ],
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    OurStoryComponent,
-    PhotosComponent,
     WeddingComponent,
+    PhotosComponent,
     GiftsComponent,
+    RsvpComponent,
     ContactComponent
   ],
   providers: [],
