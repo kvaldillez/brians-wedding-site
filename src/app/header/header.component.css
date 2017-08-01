@@ -1,14 +1,7 @@
-/* Utility Styles */
-.clear:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 /* Navigation Styles */
 #navContainer {
 	width: 100%;
-	height: 60px;
+	height: 100px;
 	background: #ba9861;
 	position: fixed;
 	z-index: 1;
@@ -27,7 +20,7 @@ nav ul {
 	font-size: 18px;
 }
 nav ul li {
-	padding: 22px 0;
+	padding: 42px 0;
 	width: 16.6%;
 	display: inline-block;
 	line-height: 16px;
@@ -36,6 +29,11 @@ nav ul li {
 	text-align: center;
 	float: left;
 }
+
+nav ul li.logo {
+		padding: 10px 0;
+}
+
 nav ul li a {
   font-family: 'Arial Narrow', Arial, Helvetica, sans-serif;
 	color: #fff;

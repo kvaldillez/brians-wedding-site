@@ -2,6 +2,9 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
+
+import { RsvpService } from './rsvp/rsvp.service';
 
 import { AppComponent }  from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -25,7 +28,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule, // <-- import the FormsModule before binding with [(ngModel)]
-    RouterModule.forRoot(appRoutes,{ useHash: true })
+    RouterModule.forRoot(appRoutes,{ useHash: true }),
+    HttpModule
   ],
   declarations: [
     AppComponent,
@@ -37,7 +41,7 @@ const appRoutes: Routes = [
     RsvpComponent,
     ContactComponent
   ],
-  providers: [],
+  providers: [RsvpService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

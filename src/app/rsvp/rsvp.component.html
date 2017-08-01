@@ -9,4 +9,56 @@
   <li>Stuffed Bell Peppers (Vegetarian)</li>
 </ul>
 
-<button class="btn btn-primary" (click)="redirectToThankYou()">RSVP</button>
+<!--<button class="btn btn-primary" (click)="redirectToThankYou()">RSVP</button>-->
+
+<p>
+  Please enter the main name on the invitation below, and then select a number of guests within your party (if applicable). Be sure to make your food selections as well.
+</p>
+<form (ngSubmit)="displayMealSelection(f)" #f="ngForm">
+    <ul id="warning">
+        <li *ngIf="!firstName.valid && firstName.touched"><span class="error">Please enter a valid first name.</span></li>
+        <li *ngIf="!lastName.valid && lastName.touched"><span class="error">Please enter a valid last name.</span></li>
+    </ul>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <h3><label for="firstName">First Name</label></h3>
+            <input type="text" name="firstName" value="" ngModel required #firstName="ngModel">
+        </div>
+        <div class="form-group col-md-6">
+            <h3><label for="email">Last Name</label></h3>
+            <input type="text" name="lastName" value="" ngModel required #lastName="ngModel">
+        </div>
+    </div>
+    <input class="submit fr" type="submit" value="Send" [disabled]="!f.valid">
+</form>
+
+<p>
+  You have until [DATE] to make any updates to your selections.
+</p>
+<form (ngSubmit)="onSubmit(fs)" #fs="ngForm" *ngIf="submitted">
+    <ul id="warning">
+        <li *ngIf="!mealSelection.valid && mealSelection.touched"><span class="error">Please select a meal.</span></li>
+    </ul>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <h3><label for="mealSelection">Meal Selection</label></h3>
+            <select name="mealSelection" ngModel required #mealSelection="ngModel" [ngModel]="defaultSelection">
+              <option value="chicken">Sun-Dried Tomato Chicken</option>
+              <option value="steak">Chimichurri Flank Steak</option>
+              <option value="salmon">Soy-Glazed Salmon</option>
+              <option value="vegetarian">Stuffed Bell Peppers (Vegetarian)</option>
+            </select>
+        </div>
+
+    </div>
+    <input class="submit fr" type="submit" value="Send" [disabled]="!fs.valid">
+</form>
+
+<hr />
+<div class="row" *ngIf="submitted">
+  <div class="col-xs-12">
+      <h3>Your Data</h3>
+      <p>First Name: {{ user.firstName }}</p>
+      <p>Last Name: {{ user.lastName }}</p>
+  </div>
+</div>

@@ -1,7 +1,19 @@
 .col-md-4 {
-  padding: 30px 20px;
+  padding: 5px 20px;
 }
+
 a.center {
+  margin: 0 0 15px;
+  padding: 20px;
+  border: 1px solid #ddd;
   display: block;
   text-align: center;
+}
+
+a.center img {
+  max-width: 100%;
+}
+
+a.center:hover {
+  opacity: .6;
 }
