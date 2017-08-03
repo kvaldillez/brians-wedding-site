@@ -3,7 +3,7 @@
     If you have any questons regarding the event, please fill out the form below and we'll get back to you shortly. Thanks!
 </p>
 
-<form id="contact_form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+<form id="contact_form" #f="ngForm">
     <ul id="warning">
         <li *ngIf="!name.valid && name.touched"><span id="name_validation" class="error">Please enter a valid name.</span></li>
         <li *ngIf="!email.valid && email.touched"><span id="email_validation" class="error">Please enter a valid email.</span></li>

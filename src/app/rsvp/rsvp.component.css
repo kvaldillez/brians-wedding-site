@@ -50,3 +50,7 @@ span.error, input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
   color: #CC0000;
   border: 1px solid red;
 }
+
+ul.guests li {
+  padding: 15px 0;
+}
