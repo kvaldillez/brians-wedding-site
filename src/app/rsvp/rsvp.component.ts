@@ -45,7 +45,9 @@ export class RsvpComponent implements OnInit {
     }
     console.log(this.guests);
     console.log(this.submitRsvpForm.value);
-    //this.submitRsvpForm.reset();
+    this.submitRsvp(this.guests);
+    this.findRsvpForm.reset();
+    this.submitRsvpForm.reset();
   }
 
   checkRsvp(){
@@ -58,15 +60,38 @@ export class RsvpComponent implements OnInit {
           if(response != null){
             this.guests = response.guests;
             this.foundRsvp = true;
-            console.log(response.responded);
+            console.log(response);
             if(response.responded == "No"){
               this.responded = false;
-
             } else {
               this.responded = true;
             }
           } else {
             this.foundRsvp = false;
+          }
+          this.submitted = true;
+        },
+        (error) => console.log(error)
+      );
+  }
+
+  submitRsvp(guests){
+    this.rsvpService.getRsvp(guests[0].firstName,guests[0].lastName)
+      .subscribe(
+        (response) => {
+          if(response != null){
+            if(response.responded == "No"){
+              response.responded = "Yes";
+              response.guests = guests;
+              console.log(response);
+              var location = response.location;
+              delete response.location;
+              this.rsvpService.storeRsvp(response,location)
+                .subscribe(
+                  (response) => console.log(response),
+                  (error) => console.log(error)
+                );
+            }
           }
           this.submitted = true;
         },
