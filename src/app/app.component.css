@@ -1,3 +1,6 @@
+.desktop { display: block; }
+.mobile { display: none; }
+
 #mainContainer {
 	background-color: #260026; /* Suggested by Brian: 1e001e */
 	height: 100%;
@@ -70,4 +73,9 @@ a, a:link, a:visited {
 	#contentContainer {
 		text-align: center;
 	}
+}
+
+@media (max-width: 640px) {
+	.desktop { display: none; }
+	.mobile { display: block; }
 }

@@ -14,7 +14,7 @@
 <p>
   Please enter the main name on the invitation below, and then select a number of guests within your party (if applicable). Be sure to make your food selections as well.
 </p>
-<form (ngSubmit)="checkRsvp()" #f="ngForm">
+<form (ngSubmit)="checkRsvp()" #f="ngForm" class="clearfix">
     <ul id="warning">
         <li *ngIf="!firstName.valid && firstName.touched"><span class="error">Please enter a valid first name.</span></li>
         <li *ngIf="!lastName.valid && lastName.touched"><span class="error">Please enter a valid last name.</span></li>
@@ -29,11 +29,11 @@
             <input type="text" name="lastName" value="" ngModel required #lastName="ngModel">
         </div>
     </div>
-    <input class="submit fr" type="submit" value="Search for my invitation" [disabled]="!f.valid">
+    <input class="submit pull-right" type="submit" value="Search for my invitation" [disabled]="!f.valid">
 </form>
 
-<hr />
 <div *ngIf="submitted">
+  <hr />
   <form #fs="ngForm" *ngIf="!responded && foundRsvp" (ngSubmit)="onSubmit()">
       <ul id="warning">
           <!--<li *ngIf="!mealSelection.valid && mealSelection.touched"><span class="error">Please select a meal.</span></li>-->

@@ -1,5 +1,9 @@
 <div id="navContainer">
-	<nav>
+	<div class="mobile header clearfix">
+		<span class="glyphicon glyphicon-menu-hamburger pull-left" (click)="toggleMobileNav()"></span>
+		<a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="logo"><img src="/assets/dnb-logo.png" /></a>
+	</div>
+	<nav class="desktop">
 		<ul class="clearfix">
 			<li class="logo"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><img src="/assets/dnb-logo.png" /></a></li>
 			<li><a routerLink="/wedding" routerLinkActive="active">Wedding</a></li>
@@ -10,3 +14,13 @@
 		</ul>
 	</nav>
 </div>
+<div id="mobileNav" class="mobile">
+	<ul class="clearfix">
+		<li><a routerLink="/wedding" routerLinkActive="active" (click)="closeMenu()">Wedding</a></li>
+		<li><a routerLink="/photos" routerLinkActive="active" (click)="closeMenu()">Photos</a></li>
+		<li><a routerLink="/gifts" routerLinkActive="active" (click)="closeMenu()">Gifts</a></li>
+		<li><a routerLink="/rsvp" routerLinkActive="active" (click)="closeMenu()">RSVP</a></li>
+		<li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
+	</ul>
+</div>
+<div id="menuOverlay" (click)="closeMenu()"></div>

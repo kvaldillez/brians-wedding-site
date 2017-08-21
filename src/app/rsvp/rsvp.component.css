@@ -18,10 +18,9 @@ input, select, textarea {
 
 input.submit {
   padding: 10px 30px;
-  background: #3d688c;
+  background: #785157;
   width: auto;
-  font-family: 'Open Sans Condensed',
-  Arial, Helvetica, sans-serif;
+  font-family: 'Arial Narrow', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   font-size: 20px;
   line-height: 28px;
@@ -35,11 +34,11 @@ input.submit:disabled {
 }
 
 input:focus {
-  border-color: #3d688c;
+  border-color: #785157;
 }
 
 textarea:focus {
-  border-color: #3d688c;
+  border-color: #785157;
 }
 
 label {
