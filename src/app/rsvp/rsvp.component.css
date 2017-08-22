@@ -4,7 +4,8 @@ input, select, textarea {
   padding: 15px;
   width: 100%;
   border: 1px solid #d1d3d4;
-  font: 16px Arial, Helvetica, sans-serif;
+  font-family: 'Arial Narrow', Arial, Helvetica, sans-serif;
+  font-size: 20px;
   color: #6d6e71;
   background-color: #ffffff;
   vertical-align: middle;
@@ -26,6 +27,7 @@ input.submit {
   line-height: 28px;
   color: #ffffff;
   cursor: pointer;
+  border: none;
 }
 
 input.submit:disabled {
@@ -52,4 +54,10 @@ span.error, input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
 
 ul.guests li {
   padding: 15px 0;
+}
+
+@media (max-width: 640px) {
+	input.submit {
+    width: 100%;
+  }
 }

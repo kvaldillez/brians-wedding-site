@@ -1,18 +1,45 @@
 <h1>RSVP</h1>
 <h2>We Hope You Will Be Able To Join Us</h2>
-<p>Please RSVP below and select your entree of choice, the selections are listed below for reference:</p>
+<p>Please RSVP at the bottom of this page and select your main entree of choice, the selections are listed below for reference:</p>
 
-<ul>
-  <li>Sun-Dried Tomato Chicken</li>
-  <li>Chimichurri Flank Steak</li>
-  <li>Soy-Glazed Salmon</li>
-  <li>Stuffed Bell Peppers (Vegetarian)</li>
-</ul>
+<div class="clearfix">
+  <h3>Mains</h3>
+  <p><strong>Sun-dried Tomato Chicken</strong><br />Chicken breast stuffed with sun-dried tomatoes, spinach and ricotta cheese finished off with a pesto cream sauce.</p>
+  <p><strong>Chimichurri Flank Steak</strong><br />A grilled flank steak with a garlic and herbed sauce.</p>
+  <p><strong>Soy-Glazed Salmon</strong><br />Pan seared salmon with a honey glaze finish with sesame seeds.</p>
+  <p><strong>Stuffed Bell Peppers (Vegetarian)</strong><br />Vegetarian stuffed bell peppers with brown lentils, sautéed  veggies, topped with melted mozzarella cheese and finished with a zesty marinara sauce.</p>
+</div>
+
+<hr />
+
+<div class="clearfix">
+  <h3>Side Dishes</h3>
+  <p><strong>Honey Roasted Butternut Squash</strong><br />Honey roasted butternut squash with cranberries, candied pecans and feta cheese crumbles.</p>
+  <p><strong>Spicy Honey Brussel Sprouts</strong><br />Spicy honey brussel sprouts with candied bacon bits.</p>
+</div>
+
+<hr />
+
+<div class="clearfix">
+  <h3>Salad</h3>
+  <p><strong>Bright Spinach Salad</strong><br />Fresh spinach tossed with strawberries, avocado, toasted almonds, red onion, and feta cheese tossed with a poppyseed dressing.</p>
+</div>
+
+<hr />
+
+<div class="clearfix">
+  <h3>Appetizers</h3>
+  <p><strong>Cranberry, brie and prosciutto crostini with balsamic glaze</strong></p>
+  <p><strong>Tequila lime shrimp</strong></p>
+  <p><strong>Caprese skewer</strong></p>
+</div>
+
+<hr />
 
 <!--<button class="btn btn-primary" (click)="redirectToThankYou()">RSVP</button>-->
 
 <p>
-  Please enter the main name on the invitation below, and then select a number of guests within your party (if applicable). Be sure to make your food selections as well.
+  Please enter a first and last name on the invitation below, and then fill out all the information of the guests in your party (if applicable). Be sure to make your main entree selection as well.
 </p>
 <form (ngSubmit)="checkRsvp()" #f="ngForm" class="clearfix">
     <ul id="warning">
@@ -29,7 +56,7 @@
             <input type="text" name="lastName" value="" ngModel required #lastName="ngModel">
         </div>
     </div>
-    <input class="submit pull-right" type="submit" value="Search for my invitation" [disabled]="!f.valid">
+    <input class="submit pull-right" type="submit" value="Search" [disabled]="!f.valid">
 </form>
 
 <div *ngIf="submitted">
