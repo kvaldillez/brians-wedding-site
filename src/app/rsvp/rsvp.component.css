@@ -47,8 +47,16 @@ label {
   cursor: pointer;
 }
 
-span.error, input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
-  color: #CC0000;
+span.error, input.ng-invalid.ng-touched {
+  padding: 10px 20px;
+  margin: 5px 0;
+  color: red;
+  border: 1px solid red;
+  display: inline-block;
+}
+
+textarea.ng-invalid.ng-touched {
+  color: red;
   border: 1px solid red;
 }
 

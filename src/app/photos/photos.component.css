@@ -1,0 +1,24 @@
+img {
+  border: 5px solid #ba9861;
+}
+
+.row .col-md-6 {
+  margin: 0 0 20px;
+}
+.row .col-md-6:first-child{
+  padding-right: 7px;
+}
+
+.row .col-md-6:last-child{
+  padding-left: 7px;
+}
+
+@media only screen and (max-width:991px) {
+  .row .col-md-6:first-child{
+    padding-right: 15px;
+  }
+
+  .row .col-md-6:last-child{
+    padding-left: 15px;
+  }
+}
