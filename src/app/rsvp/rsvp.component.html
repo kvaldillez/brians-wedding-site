@@ -1,6 +1,7 @@
 <h1>RSVP</h1>
 <h2>We Hope You Will Be Able To Join Us</h2>
-<p>Please RSVP at the bottom of this page and select your main entree of choice, the selections are listed below for reference:</p>
+<h3>Please RSVP by October 1st</h3>
+<p>You may RSVP at the bottom of this page as well as select your main entree of choice. The selections are listed below for reference:</p>
 
 <div class="clearfix">
   <h3>Mains</h3>
@@ -90,13 +91,13 @@
           </div>
         </div>
         </div>
-      <input class="submit fr" type="submit" value="Submit my RSVP" [disabled]="!fs.valid">
+      <input class="submit pull-right" type="submit" value="Submit my RSVP" [disabled]="!fs.valid">
   </form>
 </div>
 <div class="row" *ngIf="submitted">
-  <div class="col-xs-12" *ngIf="success">
+  <div class="col-xs-12" *ngIf="success && foundRsvp">
       <h3>Thanks for RSVPing, we can't wait to see you!</h3>
-      <p>For reference, you submitted a RSVP for {{ user.firstName }} {{ user.lastName }} and you'd like to have the {{ user.mealSelection }} for dinner.</p>
+      <p>For reference, you can check your RSVP and meal selection by searching for your name. If you'd like to make any changes to your RSVP, please contact us via the contact page and we'll get back to you as soon as possible.</p>
   </div>
   <div class="col-xs-12" *ngIf="responded && foundRsvp">
       <h3>It looks like you have responded already</h3>

@@ -23,6 +23,7 @@ export class RsvpComponent implements OnInit {
   submitted = false;
   responded = false;
   foundRsvp = false;
+  success = false;
   constructor(private router: Router, private rsvpService: RsvpService) { }
 
   ngOnInit() {
@@ -94,6 +95,7 @@ export class RsvpComponent implements OnInit {
             }
           }
           this.submitted = true;
+          this.success = true;
         },
         (error) => console.log(error)
       );

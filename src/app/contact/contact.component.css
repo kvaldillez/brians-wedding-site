@@ -35,11 +35,11 @@ input.submit:disabled {
 }
 
 input:focus {
-  border-color: #3d688c;
+  border-color: #785157;
 }
 
 textarea:focus {
-  border-color: #3d688c;
+  border-color: #785157;
 }
 
 label {
