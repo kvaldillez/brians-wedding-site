@@ -36,6 +36,17 @@ export class RsvpComponent implements OnInit {
     this.router.navigate(['/photos']);
   }
 
+  mealSelectionRequired(event: Event, index){
+		var req = (<HTMLInputElement>event.target).value;
+    if(req == 'Yes'){
+      var el = document.getElementById('rsvpForm').getElementsByClassName('mealSelection'+index)[0];
+      console.log(el);
+      //el.setAttribute('required','required');
+      //console.log(value);
+      console.log('remove required field from mealSelection'+ index);
+    }
+	}
+
   onSubmit(){
     var index = 0;
     for (const guest of this.guests){

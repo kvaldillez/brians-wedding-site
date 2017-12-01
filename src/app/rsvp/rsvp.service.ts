@@ -7,11 +7,11 @@ export class RsvpService {
   constructor(private http: Http){}
 
   storeRsvp(rsvp: {}, location: number){
-    return this.http.put('https://dnb2017-d9f24.firebaseio.com/data/'+location+'.json', rsvp);
+    return this.http.put('https://INSERT_DATABASE_ID.firebaseio.com/data/'+location+'.json', rsvp);
   }
 
   getRsvp(firstName,lastName){
-    return this.http.get('https://dnb2017-d9f24.firebaseio.com/data.json')
+    return this.http.get('https://INSERT_DATABASE_ID.firebaseio.com/data.json')
       .map(
         (response: Response) => {
           const data = response.json();
